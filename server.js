@@ -40,11 +40,7 @@ const port = 5000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// MongoDB connection
-// mongoose.connect('mongodb://localhost:27017/election_management789', {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-// });
+
 
 mongoose.connect(
 "mongodb+srv://lingojikarthikchary:19248cm23023012004@cluster0.p7kft.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"  );
@@ -56,7 +52,6 @@ db.once('open', () => {
 
 app.use(cors());
   
-  // Enable CORS with the specified options
 
 app.use(bodyParser.json());
 
