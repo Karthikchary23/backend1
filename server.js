@@ -54,11 +54,7 @@ db.once('open', () => {
   console.log('Connected to MongoDB');
 });
 
-app.use(cors({
-  origin: 'http://localhost:5173', // Allow requests from your frontend
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Allow necessary methods
-  credentials: true, // Include cookies if needed
-}));
+app.use(cors());
   
   // Enable CORS with the specified options
 
