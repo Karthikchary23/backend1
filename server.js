@@ -61,8 +61,6 @@ app.use(cors({
 }));
   
   // Enable CORS with the specified options
-  app.use(cors(corsOptions));
-  app.options('*', cors(corsOptions));  // Handle preflight requests
 
 app.use(bodyParser.json());
 
