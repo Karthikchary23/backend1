@@ -488,6 +488,10 @@ app.post('/verify-otp', (req, res) => {
       res.status(400).json({ message: 'Invalid OTP' });
   }
 });
+app.get('/hello', (req, res) => {
+    res.send('Hello, World!');
+    console.log("hello");
+  });
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
