@@ -50,7 +50,12 @@ db.once('open', () => {
   console.log('Connected to MongoDB');
 });
 
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+  origin: 'https://frontend-seven-virid-89.vercel.app',  // Specify the frontend URL
+  methods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],  // Allowed HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization'],  // Allowed headers
+}));
   
 
 app.use(bodyParser.json());
