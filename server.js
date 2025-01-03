@@ -54,7 +54,15 @@ db.once('open', () => {
   console.log('Connected to MongoDB');
 });
 
-app.use(cors());
+const corsOptions = {
+    origin: 'http://localhost:5173',  // Allow your frontend's origin
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Allow specific HTTP methods
+    allowedHeaders: ['Content-Type', 'Authorization'],  // Allow specific headers
+    credentials: true,  // Allow credentials like cookies, if needed
+  };
+  
+  // Enable CORS with the specified options
+  app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 // Serve uploaded images statically
